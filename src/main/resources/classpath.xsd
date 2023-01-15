@@ -1,0 +1,36 @@
+<xs:schema
+  elementFormDefault="qualified"
+  targetNamespace="http://www.openjax.org/eclipse/classpath.xsd"
+  xmlns:cp="http://www.openjax.org/eclipse/classpath.xsd"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="classpath">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="classpathentry" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="attributes" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="attribute" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:attribute name="name" use="required" type="xs:NCName"/>
+                        <xs:attribute name="value" use="required" type="xs:boolean"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="excluding" type="xs:NCName"/>
+            <xs:attribute name="including" type="xs:NCName"/>
+            <xs:attribute name="kind" type="xs:NCName" use="required"/>
+            <xs:attribute name="output" type="xs:NCName"/>
+            <xs:attribute name="path" type="xs:NCName" use="required"/>
+            <xs:attribute name="sourcepath" type="xs:NCName"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

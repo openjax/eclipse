@@ -1,0 +1,75 @@
+<!--
+  Copyright (c) 2023 OpenJAX
+
+  Permission ics hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  You should have received a copy of The MIT License (MIT) along with this
+  program. If not, see <http://opensource.org/licenses/MIT/>.
+-->
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.openjax</groupId>
+    <artifactId>openjax</artifactId>
+    <version>2.5.6-SNAPSHOT</version>
+  </parent>
+  <artifactId>eclipse</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <name>OpenJAX Eclipse</name>
+  <description>
+    Tools for Eclipse IDE.
+  </description>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openjax.xml</groupId>
+        <artifactId>xml-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.jaxsb</groupId>
+        <artifactId>jaxsb-maven-plugin</artifactId>
+        <version>2.2.0-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <id>generate</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <phase>generate-resources</phase>
+            <configuration>
+              <destDir>${project.build.directory}/generated-sources/jaxsb</destDir>
+              <schemas>
+                <schema>src/main/resources/classpath.xsd</schema>
+              </schemas>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>org.libj</groupId>
+      <artifactId>test</artifactId>
+      <version>0.7.2-SNAPSHOT</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jaxsb</groupId>
+      <artifactId>runtime</artifactId>
+      <version>2.2.0-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+</project>
