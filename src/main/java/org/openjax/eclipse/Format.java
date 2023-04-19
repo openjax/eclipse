@@ -31,19 +31,21 @@ import org.openjax.xml.dom.DOMs;
 import org.xml.sax.SAXException;
 
 public class Format {
+  private static final String[] order = {
+    "src/main/java",
+    "src/main/resources",
+    "src/test/java",
+    "src/test/resources",
+    "target/generated-sources",
+    "target/generated-test-sources",
+    "org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER",
+    "org.eclipse.jdt.launching.JRE_CONTAINER/",
+    "target/classes"
+  };
+
   private static final Comparator<xAA.Classpath.Classpathentry> pathComparator = Comparators.newFixedOrderComparator(
     (final xAA.Classpath.Classpathentry c) -> c.getPath$().text(),
-    (final String o1, final String o2) -> o1.startsWith(o2) ? 0 : -1, new String[] {
-      "src/main/java",
-      "src/main/resources",
-      "src/test/java",
-      "src/test/resources",
-      "target/generated-sources",
-      "target/generated-test-sources",
-      "org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER",
-      "org.eclipse.jdt.launching.JRE_CONTAINER/",
-      "target/classes"
-    });
+    (final String o1, final String o2) -> o1.startsWith(o2) ? 0 : -1, order);
 
   public static void main(final String[] args) throws IOException, SAXException {
     for (final String arg : args) { // [A]
