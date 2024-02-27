@@ -20,6 +20,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/**
+ * Change path of project in workspace.
+ */
 public class EclipseUtil {
   public static void main(final String[] args) throws IOException {
     final File workspaceDir = new File(args[0]);

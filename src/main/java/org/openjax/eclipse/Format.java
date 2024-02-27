@@ -30,6 +30,9 @@ import org.openjax.xml.dom.DOMStyle;
 import org.openjax.xml.dom.DOMs;
 import org.xml.sax.SAXException;
 
+/**
+ * Format .classpath files.
+ */
 public class Format {
   private static final String[] order = {
     "src/main/java",
