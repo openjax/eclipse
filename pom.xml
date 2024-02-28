@@ -22,10 +22,10 @@
   <parent>
     <groupId>org.openjax</groupId>
     <artifactId>openjax</artifactId>
-    <version>2.5.7</version>
+    <version>2.5.8-SNAPSHOT</version>
   </parent>
   <artifactId>eclipse</artifactId>
-  <version>0.2.0</version>
+  <version>0.2.1-SNAPSHOT</version>
   <name>OpenJAX Eclipse</name>
   <description>
     Tools for Eclipse IDE.
@@ -39,7 +39,7 @@
       <plugin>
         <groupId>org.jaxsb</groupId>
         <artifactId>jaxsb-maven-plugin</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1-SNAPSHOT</version>
         <executions>
           <execution>
             <id>generate</id>
@@ -62,14 +62,14 @@
     <dependency>
       <groupId>org.libj</groupId>
       <artifactId>test</artifactId>
-      <version>0.7.3</version>
+      <version>0.7.4-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.jaxsb</groupId>
       <artifactId>runtime</artifactId>
-      <version>3.0.0</version>
+      <version>3.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
 </project>
