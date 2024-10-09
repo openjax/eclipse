@@ -39,7 +39,9 @@ public class Format {
     "src/main/resources",
     "src/test/java",
     "src/test/resources",
+    "target/generated-resources",
     "target/generated-sources",
+    "target/generated-test-resources",
     "target/generated-test-sources",
     "org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER",
     "org.eclipse.jdt.launching.JRE_CONTAINER/",
@@ -47,8 +49,8 @@ public class Format {
   };
 
   private static final Comparator<xAA.Classpath.Classpathentry> pathComparator = Comparators.newFixedOrderComparator(
-    (final xAA.Classpath.Classpathentry c) -> c.getPath$().text(),
-    (final String o1, final String o2) -> o1.startsWith(o2) ? 0 : -1, order);
+    (final xAA.Classpath.Classpathentry c, final String o) -> c.getPath$().text().startsWith(o),
+    (final xAA.Classpath.Classpathentry o1, final xAA.Classpath.Classpathentry o2) -> o1.getPath$().text().compareTo(o2.getPath$().text()), order);
 
   public static void main(final String[] args) throws IOException, SAXException {
     for (final String arg : args) { // [A]
